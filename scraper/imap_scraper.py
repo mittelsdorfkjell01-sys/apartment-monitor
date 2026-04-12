@@ -8,29 +8,7 @@ from scraper.base_scraper import BaseScraper
 
 
 class IMAPScraper(BaseScraper):
-    """
-    Liest ImmoScout24 (und Immonet/Immowelt) Such-Alert-Emails per IMAP aus
-    und speist sie in die normale Listing-Pipeline ein.
-
-    Einrichtung (einmalig, manuell im Browser):
-      1. ImmoScout24 → Suche konfigurieren → "Suche speichern" → E-Mail-Benachrichtigung aktivieren
-      2. Immonet     → Suche konfigurieren → "Suchauftrag speichern" → E-Mail-Benachrichtigung aktivieren
-      3. Ein Gmail-Konto anlegen (oder vorhandenes nutzen), das diese Alerts empfängt
-      4. In Gmail: Einstellungen → Sicherheit → 2FA aktivieren → App-Passwort erstellen
-      5. App-Passwort + Gmail-Adresse in config.yaml (imap-Sektion) eintragen
-
-    config.yaml Beispiel:
-      imap:
-        email: "mein-alert-postfach@gmail.com"
-        password: "xxxx xxxx xxxx xxxx"   # Gmail App-Passwort (mit Leerzeichen!)
-        server: "imap.gmail.com"
-        port: 993
-        # Absender-Adressen der Alert-Mails (werden gefiltert)
-        senders:
-          - "no-reply@immobilienscout24.de"
-          - "noreply@immonet.de"
-          - "noreply@immowelt.de"
-    """
+   
 
     def __init__(self, imap_config: Dict, session=None,
                  max_price: float = 700.0, allowed_districts=None):
