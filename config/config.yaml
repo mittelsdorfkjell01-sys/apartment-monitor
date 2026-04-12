@@ -1,0 +1,51 @@
+# Apartment monitoring configuration
+max_price: 620
+districts:
+  - Alsterdorf
+  - Winterhude
+  - Harvestehude
+  - Schanzenviertel
+  - Schlump
+  - Uhlenhorst
+  - Hohenfelde
+  - St. Georg
+  - Hoheluft-Ost
+  - Hoheluft-West
+  - Eimsbüttel
+  - St. Pauli
+  - City Nord
+  - Eilbek
+  - Hasselbrook
+
+
+
+#In Railway Variables setzen (IMAP_EMAIL, IMAP_PASSWORD)
+imap:
+  email: ""               # z.B. meine-wohnungssuche@gmail.com
+  password: ""            # Gmail App-Passwort (16 Zeichen, NICHT dein normales Passwort!)
+  server: "imap.gmail.com"
+  port: 993
+  senders:                # Absender-Adressen der Alert-Mails (nicht ändern)
+    - "no-reply@immobilienscout24.de"
+    - "noreply@immonet.de"
+    - "noreply@immowelt.de"
+
+# Email-Konfiguration
+# Benachrichtigungen kommen VON und AN die Email deines Kumpels
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  friend_email: friend@gmail.com       # Email deines Kumpels
+  friend_password: friends_app_password  # Gmail App-Passwort (nicht das normale Passwort!)
+
+# Telegram-Konfiguration (optional)
+telegram:
+  bot_token: ""
+  chat_id: ""
+
+# Polling-Intervall (zufällig zwischen min und max)
+polling_interval_min: 60   # Minimum: 1 Minute
+polling_interval_max: 600  # Maximum: 10 Minuten
+
+# Datenbank
+database_path: "database.db"

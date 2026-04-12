@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Monitor Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .listing { border: 1px solid #ccc; margin: 10px 0; padding: 10px; }
+        .new { background-color: #e8f5e8; }
+        .notified { background-color: #fff3cd; }
+        .btn { padding: 5px 10px; margin: 5px; }
+        a { text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Apartment Monitoring Dashboard</h1>
+    
+    <h2>Latest Listings</h2>
+    <div id="new-listings">
+        {% for listing in new_listings %}
+        <div class="listing new">
+            <h3>{{ listing[1] }}</h3>
+            <p>Price: {{ listing[3] }} EUR</p>
+            <p>District: {{ listing[4] }}</p>
+            <p>Source: {{ listing[6] }}</p>
+            <p><a href="{{ listing[5] }}" target="_blank" class="btn">View Listing</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <h2>Already Notified Listings</h2>
+    <div id="notified-listings">
+        {% for listing in notified_listings %}
+        <div class="listing notified">
+            <h3>{{ listing[1] }}</h3>
+            <p>Price: {{ listing[3] }} EUR</p>
+            <p>District: {{ listing[4] }}</p>
+            <p>Source: {{ listing[6] }}</p>
+            <p><a href="{{ listing[5] }}" target="_blank" class="btn">View Listing</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <h2>All Listings</h2>
+    <div id="all-listings">
+        {% for listing in all_listings %}
+        <div class="listing">
+            <h3>{{ listing[1] }}</h3>
+            <p>Price: {{ listing[3] }} EUR</p>
+            <p>District: {{ listing[4] }}</p>
+            <p>Source: {{ listing[6] }}</p>
+            <p><a href="{{ listing[5] }}" target="_blank" class="btn">View Listing</a></p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
