@@ -1,5 +1,5 @@
 # Apartment monitoring configuration
-max_price: 620
+max_price: 700
 districts:
   - Alsterdorf
   - Winterhude
